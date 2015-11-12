@@ -28,6 +28,14 @@ describe ConvertNumber do
       expect(subject.convert 10).to eq 'ten'
     end
 
+    it 'should convert the number 20 to the word "twenty"' do
+      expect(subject.convert 20).to eq 'twenty'
+    end
+
+    it 'should convert the number 70 to the word "seventy"' do
+      expect(subject.convert 70).to eq 'seventy'
+    end
+
   end
 
 end
