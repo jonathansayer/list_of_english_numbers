@@ -40,9 +40,29 @@ describe ConvertNumber do
       expect(subject.convert 21).to eq "twenty-one"
     end
 
-    it 'should convert the number 46 to the world "forty-six"' do
+    it 'should convert the number 46 to the word "forty-six"' do
       expect(subject.convert 46).to eq "forty-six"
+    end
+
+    it 'should convert the number 99 to the word "ninety-nine"' do
+      expect(subject.convert 99).to eq "ninety-nine"
     end 
+  end
+
+  context 'converting teen numbers' do
+
+    it 'should convert the number 11 to the word "eleven"' do
+      expect(subject.convert 11).to eq 'eleven'
+    end
+
+    it 'should convert the number 13 to the word "thirteen"' do
+      expect(subject.convert 13).to eq 'thirteen'
+    end
+
+    it 'should convert the number 19 to the word "nineteen"' do
+      expect(subject.convert 19).to eq 'nineteen'
+    end
+
   end
 
 end
