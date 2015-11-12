@@ -36,6 +36,13 @@ describe ConvertNumber do
       expect(subject.convert 70).to eq 'seventy'
     end
 
+    it 'should convert the number 21 to the word "twenty-one"' do
+      expect(subject.convert 21).to eq "twenty-one"
+    end
+
+    it 'should convert the number 46 to the world "forty-six"' do
+      expect(subject.convert 46).to eq "forty-six"
+    end 
   end
 
 end

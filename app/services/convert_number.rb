@@ -13,7 +13,7 @@ class ConvertNumber
 @tens = { '1' => 'ten',
           '2' => 'twenty',
           '3' => 'thirty',
-          '4' => 'fourty',
+          '4' => 'forty',
           '5' => 'fifty',
           '6' => 'sixty',
           '7' => 'seventy',
@@ -23,7 +23,8 @@ class ConvertNumber
   def self.convert number
     number = number.to_s
     return @numbers[number] if number.length == 1
-    return @tens[number[0]] if number.length == 2
+    return @tens[number[0]] if number.length == 2 and number[1] == '0'
+    return (@tens[number[0]] + '-' + @numbers[number[1]]) if number.length == 2
   end
 
 end
