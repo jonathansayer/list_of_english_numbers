@@ -30,14 +30,27 @@ class Convert_Number
            '18' => 'eighteen',
            '19' => 'nineteen'}
 
+@big_numbers = { 3 => 'hundred',
+                 4 => 'thousand',
+                 7 => 'million',
+                 10 => 'billion'}
+
   def self.convert number
     number = number.to_s
     return @numbers[number] if number.length == 1
     return self.tens number if number.length == 2
     return self.hundreds number if number.length == 3
+    return self.thousands number if number.length == 4
   end
 
   private
+
+  def self.thousands number
+    return @numbers[number[0]] + ' thousand' if number[1] + number[2] + number[3] == '000'
+    return @numbers[number[0]] + ' thousand and ' + self.hundreds(number[1] + number[2] + number[3])
+  end
+
+
 
   def self.hundreds number
     return @numbers[number[0]] + ' hundred' if number[1] == '0' and number[2] == '0'
