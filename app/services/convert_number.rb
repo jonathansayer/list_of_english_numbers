@@ -33,12 +33,22 @@ class ConvertNumber
   def self.convert number
     number = number.to_s
     return @numbers[number] if number.length == 1
-    return @tens[number[0]] if number.length == 2 and number[1] == '0'
-    return @teens[number] if self.is_teen? number
-    return (@tens[number[0]] + '-' + @numbers[number[1]]) if number.length == 2 and !self.is_teen? number
+    return self.tens number if number.length == 2
+    return self.hundreds number if number.length == 3
   end
 
   private
+
+  def self.hundreds number
+    return @numbers[number[0]] + ' hundred' if number[1] == '0' and number[2] == '0'
+    return @numbers[number[0]] + ' hundred and ' + self.tens(number[1] + number[2])
+  end
+
+  def self.tens number
+    return @tens[number[0]] if number.length == 2 and number[1] == '0'
+    return @teens[number] if self.is_teen? number
+    return (@tens[number[0]] + " " + @numbers[number[1]]) if number.length == 2 and !self.is_teen? number
+  end
 
   def self.is_teen? number
     return true if number.length == 2 and number[0] == '1'

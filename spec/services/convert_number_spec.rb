@@ -37,16 +37,16 @@ describe ConvertNumber do
     end
 
     it 'should convert the number 21 to the word "twenty-one"' do
-      expect(subject.convert 21).to eq "twenty-one"
+      expect(subject.convert 21).to eq "twenty one"
     end
 
     it 'should convert the number 46 to the word "forty-six"' do
-      expect(subject.convert 46).to eq "forty-six"
+      expect(subject.convert 46).to eq "forty six"
     end
 
     it 'should convert the number 99 to the word "ninety-nine"' do
-      expect(subject.convert 99).to eq "ninety-nine"
-    end 
+      expect(subject.convert 99).to eq "ninety nine"
+    end
   end
 
   context 'converting teen numbers' do
@@ -63,6 +63,21 @@ describe ConvertNumber do
       expect(subject.convert 19).to eq 'nineteen'
     end
 
+  end
+
+  context 'converting three digit numbers' do
+
+    it'should convert the number 100 to the word "one-hundred"' do
+      expect(subject.convert 100).to eq 'one hundred'
+    end
+
+    it 'should convert the number 110 to the words "one hundred and ten"' do
+      expect(subject.convert 110).to eq 'one hundred and ten'
+    end
+
+    it 'should convert the number 240 to the words "two hundred and forty"' do
+      expect(subject.convert 240).to eq 'two hundred and forty'
+    end
   end
 
 end
