@@ -1,6 +1,7 @@
 <%= form_for(:list_number, url: numbers_generate_list_path) do |f| %>
 <%= f.label "Number:" %>
 <%= f.text_field :number, id:'Number' %>
+<%= f.label "Number per Page:" %>
 <%= f.text_field :per_page, id:'number_per_page' %>
 <%= f.submit "Generate List" %>
 <% end %>

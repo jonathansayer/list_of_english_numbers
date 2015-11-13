@@ -10,7 +10,6 @@ feature 'numbers list' do
     scenario 'should allow a user to enter a number a receive a list' do
       visit '/numbers'
       fill_in("Number", :with => "5")
-      fill_in("number_per_page", :with => 5)
       click_button "Generate List"
       expect(page).to have_content 'five'
       expect(page).to have_content 'four'
