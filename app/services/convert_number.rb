@@ -41,6 +41,14 @@ class Convert_Number
     return self.tens number if number.length == 2
     return self.hundreds number if number.length == 3
     return self.thousands number if number.length == 4
+    if number.length > 4
+      split_number = number.split(//, 3)
+      number_of_thousands = split_number[0] + split_number[1]
+      thousands = self.convert number_of_thousands
+      hundreds = self.convert split_number.last
+      return thousands + ' thousand ' + hundreds
+      # return (prefix + self.thousands split_number[1])
+    end
   end
 
   private
@@ -51,8 +59,8 @@ class Convert_Number
   end
 
 
-
   def self.hundreds number
+    return '' if number[0] == '0'
     return @numbers[number[0]] + ' hundred' if number[1] == '0' and number[2] == '0'
     return @numbers[number[0]] + ' hundred and ' + self.tens(number[1] + number[2])
   end

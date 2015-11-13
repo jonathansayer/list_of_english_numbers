@@ -106,4 +106,36 @@ describe Convert_Number do
       expect(subject.convert 9999).to eq "nine thousand and nine hundred and ninety nine"
     end
   end
+
+  context 'convert 5 digit numbers' do
+
+    it 'should convert the number 10000 to the word "ten thousand"' do
+      expect(subject.convert 10000).to eq "ten thousand "
+    end
+
+    it 'should convert the number 22000 to the word twenty two thousand' do
+      expect(subject.convert 22000).to eq "twenty two thousand "
+    end
+
+    it 'should convert the number 33300 to the word thirty three thousand and three hundred' do
+      expect(subject.convert 33300).to eq 'thirty three thousand three hundred'
+    end
+
+    it 'should convert the number 12345 to the word "twelve thousand three hundred and forty five"' do
+      expect(subject.convert 12345).to eq 'twelve thousand three hundred and forty five'
+    end
+  end
+
+  # context 'convert 6 digit numbers' do 
+
+
+  # it 'should convert 100000000 to one billion' do
+  #   expect(subject.convert 1000000000).to eq "one billion"
+  # end
+  #
+  # it 'should convert 100100000 to one billion and one million' do
+  #   expect(subject.convert 1001000000).to eq "one billion and one million"
+  # end
+
+
 end
