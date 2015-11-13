@@ -1,0 +1,21 @@
+require "rails_helper"
+
+feature 'numbers list' do
+  context'selecting the number you want and the numbers per page' do
+    scenario 'should display a prompt to enter a number to generate list' do
+      visit '/numbers'
+      expect(page).to have_content "Number: "
+    end
+
+    scenario 'should allow a user to enter a number a receive a list' do
+      visit '/numbers'
+      fill_in("Number", :with => "5")
+      click_button "Generate List"
+      expect(page).to have_content 'five'
+      expect(page).to have_content 'four'
+      expect(page).to have_content 'three'
+      expect(page).to have_content 'two'
+      expect(page).to have_content 'one'
+    end
+  end
+end

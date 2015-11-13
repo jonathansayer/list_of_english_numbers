@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  get "numbers" => "numbers#index"
+  post "numbers_generate_list" => "numbers#generate_list"
+  get "numbers_show" => "numbers#show"
+  root "numbers#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

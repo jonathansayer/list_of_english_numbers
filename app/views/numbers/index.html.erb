@@ -1,0 +1,5 @@
+<%= form_for(:list_number, url: numbers_generate_list_path) do |f| %>
+<%= f.label "Number:" %>
+<%= f.text_field :number, id:'Number' %>
+<%= f.submit "Generate List" %>
+<% end %>

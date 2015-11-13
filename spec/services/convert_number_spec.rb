@@ -142,17 +142,5 @@ describe Convert_Number do
     it 'should convert the number 1000000 to the word "one million"' do
       expect(subject.convert 1000000).to eq "one million"
     end
-    
   end
-
-
-  # it 'should convert 100000000 to one billion' do
-  #   expect(subject.convert 1000000000).to eq "one billion"
-  # end
-  #
-  # it 'should convert 100100000 to one billion and one million' do
-  #   expect(subject.convert 1001000000).to eq "one billion and one million"
-  # end
-
-
 end
