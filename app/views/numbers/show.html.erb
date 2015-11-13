@@ -1,3 +1,5 @@
-<% @list.each do |num| %>
-<%= num %>
+<%= will_paginate @display_list %>
+<% @display_list.each do |num| %>
+<%= num %> </br>
 <% end %>
+<%= will_paginate @display_list %>
