@@ -12,7 +12,7 @@ User Stories are as follows:
 
 ```
 As a User
-I would like to be able to enter any number from 1 - 1 million and receive a list of numbers in between.
+I would like to be able to enter any number from 1 to 1 million and receive a list of numbers in between.
 for my own amusement.
 
 As a User
