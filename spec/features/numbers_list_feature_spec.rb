@@ -5,7 +5,7 @@ feature 'numbers list' do
   before(:each) do
     visit '/numbers'
     fill_in("Number", :with => "5")
-  end 
+  end
 
   context'selecting the number you want and the numbers per page' do
     scenario 'should display a prompt to enter a number to generate list' do
@@ -29,7 +29,11 @@ feature 'numbers list' do
       expect(page).to_not have_content 'four'
     end
 
-
-
+    scenario 'should default to 5 pages per page' do
+      fill_in("number_per_page", :with => 100)
+      click_button "Generate List"
+      expect(page).to have_content "five"
+      expect(page).to_not have_content 'six'
+    end
   end
 end
