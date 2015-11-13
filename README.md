@@ -21,7 +21,7 @@ So that I can see how all to spell all numbers.
 
 As a User
 I want to be able to determine the number of words displayed per page.
-So Im not overwhelmed by the results.
+So I'm not overwhelmed by the results.
 ```
 
 
