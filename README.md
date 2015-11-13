@@ -69,7 +69,7 @@ Difficulties and Bugs
 
 There is one bug! The Convert_Number service will convert any number that its given
 as long as that number is between 1 and 1 million. However, once the convert class method is called
-in the Generate_List class, an error is raised one the numbers are any more than 100.
+in the Generate_List class, an error is raised once the numbers are any more than 100.
 I will endeavour to find this bug and fix it!!
 
 There is also no styling at the moment. This will also be fixed.
