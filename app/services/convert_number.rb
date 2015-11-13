@@ -30,28 +30,26 @@ class Convert_Number
            '18' => 'eighteen',
            '19' => 'nineteen'}
 
-@big_numbers = { 3 => 'hundred',
-                 4 => 'thousand',
-                 7 => 'million',
-                 10 => 'billion'}
-
   def self.convert number
+    return 'one million' if number == 1000000
     number = number.to_s
     return @numbers[number] if number.length == 1
     return self.tens number if number.length == 2
     return self.hundreds number if number.length == 3
     return self.thousands number if number.length == 4
-    if number.length > 4
-      split_number = number.split(//, 3)
-      number_of_thousands = split_number[0] + split_number[1]
-      thousands = self.convert number_of_thousands
-      hundreds = self.convert split_number.last
-      return thousands + ' thousand ' + hundreds
-      # return (prefix + self.thousands split_number[1])
-    end
+    return self.hundreds_of_thousands number if number.length > 4
   end
 
   private
+
+  def self.hundreds_of_thousands number
+    split_number = number.split(//, number.length - 2)
+    number_of_thousands = split_number.reverse.drop(1).reverse.join('')
+    thousands = self.convert number_of_thousands
+    hundreds = self.convert split_number.last
+    return thousands + ' thousand ' + hundreds
+  end
+
 
   def self.thousands number
     return @numbers[number[0]] + ' thousand' if number[1] + number[2] + number[3] == '000'

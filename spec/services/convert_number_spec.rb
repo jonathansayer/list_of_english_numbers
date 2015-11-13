@@ -126,7 +126,24 @@ describe Convert_Number do
     end
   end
 
-  # context 'convert 6 digit numbers' do 
+  context 'convert 6 digit numbers' do
+
+    it 'should convert the number 100000 to the word "one hundred thousand"' do
+      expect(subject.convert 100000).to eq 'one hundred thousand '
+    end
+
+    it 'should convert the number 123456 to the word "one hundred amd twnety three thousand four hundred and fifty six"' do
+      expect(subject.convert 123456).to eq "one hundred and twenty three thousand four hundred and fifty six"
+    end
+  end
+
+  context 'converting one million' do
+
+    it 'should convert the number 1000000 to the word "one million"' do
+      expect(subject.convert 1000000).to eq "one million"
+    end
+    
+  end
 
 
   # it 'should convert 100000000 to one billion' do
