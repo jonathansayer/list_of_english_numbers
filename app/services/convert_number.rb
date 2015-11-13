@@ -50,12 +50,10 @@ class Convert_Number
     return thousands + ' thousand ' + hundreds
   end
 
-
   def self.thousands number
     return @numbers[number[0]] + ' thousand' if number[1] + number[2] + number[3] == '000'
     return @numbers[number[0]] + ' thousand and ' + self.hundreds(number[1] + number[2] + number[3])
   end
-
 
   def self.hundreds number
     return '' if number[0] == '0'
