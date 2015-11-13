@@ -17,7 +17,7 @@ for my own amusement.
 
 As a User
 I would like the numbers to be displayed in words,
-So that I can see how all the numbers a spelt.
+So that I can see how all to spell all numbers.
 
 As a User
 I want to be able to determine the number of words displayed per page.
