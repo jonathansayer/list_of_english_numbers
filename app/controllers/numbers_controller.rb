@@ -1,5 +1,6 @@
 class NumbersController < ApplicationController
-
+  include NumbersHelper
+  
   def index
   end
 
@@ -7,11 +8,7 @@ class NumbersController < ApplicationController
     number = params[:list_number][:number].to_i
     list = Generate_List.generate number
     session[:list] = list
-    if params[:list_number][:per_page] != ''
-      session[:per_page] = params[:list_number][:per_page]
-    else
-      session[:per_page] = 5
-    end
+    per_page_value params[:list_number][:per_page]
     redirect_to numbers_show_path
   end
 
