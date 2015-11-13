@@ -33,8 +33,7 @@ result, the approach I took was a lot different to if I had started converting l
 My approach involves returning a value if it fits certain criteria. There is some recursion in there
 to aid with the converting of the larger numbers.
 
-There is a way to solve this problem which involves a recursion,determining
-a prefix, and reducing the number with each recursion until you get to zero. This method is more
+There is a way to solve this problem which involves a recursion which reduces the number with each recursion until you get to zero, whilst also determining a prefix. This method is more
 agile and can be used for nearly any number. But for the number range I am dealing with, the current service
 works fine.
 
