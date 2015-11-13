@@ -81,6 +81,6 @@ trying to figure out where the recursion should go and how it should work. Recur
 your head around.
 
 As I said earlier, I have never paginated a list before so this was a new gem that
-I had to learn. The will_paginate also traditionally deals with models, and although
-it feels weird not having a model in my Rails. I feel like I just don't need one for this problem.
+I had to learn. The will_paginate gem also traditionally deals with models, and although
+it feels weird not having a model in my Rails app, I feel like I just don't need one for this problem.
 The problems came when trying to figure out how to paginate an array and not a model. 
