@@ -45,7 +45,7 @@ The program is tested using rspec and capybara.
 How to use the Program
 -----
 
-Once the repo has been cloned, run bundle to download all the gems that needed.
+Once the repo has been cloned, run bundle to download all the gems that are needed.
 Since this repo has been built on rails, its simple to start the server:
 
 ```
