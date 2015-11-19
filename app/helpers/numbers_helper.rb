@@ -7,5 +7,4 @@ module NumbersHelper
       session[:per_page] = 5
     end
   end
-  
 end

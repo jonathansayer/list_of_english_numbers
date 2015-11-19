@@ -1,13 +1,12 @@
 class NumbersController < ApplicationController
   include NumbersHelper
-  
+
   def index
   end
 
   def generate_list
     number = params[:list_number][:number].to_i
-    list = Generate_List.generate number
-    session[:list] = list
+    session[:list] = Generate_List.generate number
     per_page_value params[:list_number][:per_page]
     redirect_to numbers_show_path
   end
