@@ -2,17 +2,18 @@ class NumbersController < ApplicationController
   include NumbersHelper
 
   def index
+    Number.delete_all
   end
 
   def generate_list
     number = params[:list_number][:number].to_i
-    session[:list] = Generate_List.generate number
+    Generate_List.generate number
     per_page_value params[:list_number][:per_page]
     redirect_to numbers_show_path
   end
 
   def show
-    list = session[:list]
+    list = Number.all
     per_page = session[:per_page]
     list = WillPaginate::Collection.create(2, per_page, list.length)do |pager|
       pager.replace list
