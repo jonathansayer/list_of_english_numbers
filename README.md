@@ -67,11 +67,9 @@ You should see all tests go green.
 Difficulties and Bugs
 -----
 
-There is one bug! The Convert_Number service will convert any number that its given
-as long as that number is between 1 and 1 million. However, once the convert class method is called
-in the Generate_List class, an error is raised once the numbers are any more than 100. You can play around with the 
-Convert_Numbers service in the rails console and it will work for any number. 
-I will endeavour to find this bug and fix it!!
+Initially there was one bug which would stop any conversion of any number over 100. This was because the convert service had to method to deal with any number whih was over one hundred but had no value of ten (i.e every number between 101 and 109). Therefore an error was thrown every time a user would select any number above 100.
+
+There is another bug now. This one revolves around a cookie overflows. In order to fix this I will have to save data to a database. But as long as a number that isn't too high being selected for use, then the program will work just fine.
 
 There is also no styling at the moment. This will also be fixed.
 
