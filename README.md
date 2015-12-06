@@ -69,7 +69,7 @@ Difficulties and Bugs
 
 Initially there was one bug which would stop any conversion of any number over 100. This was because the convert service had to method to deal with any number whih was over one hundred but had no value of ten (i.e every number between 101 and 109). Therefore an error was thrown every time a user would select any number above 100.
 
-There is another bug now. This one revolves around a cookie overflows. In order to fix this I will have to save data to a database. But as long as a number that isn't too high being selected for use, then the program will work just fine.
+The cookie overflow problem has been solved by saving the generated numbers to a database. The only problem is that if a uses generates a list and then goes back to the index page, the list will not be wiped from the database and so will show the two lists twice. Now the only problem is that the serves takes too long to generate large numbers like 1,000,000. 
 
 There is also no styling at the moment. This will also be fixed.
 
