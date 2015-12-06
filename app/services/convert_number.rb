@@ -58,6 +58,7 @@ class Convert_Number
   def self.hundreds number
     return '' if number[0] == '0'
     return @numbers[number[0]] + ' hundred' if number[1] == '0' and number[2] == '0'
+    return @numbers[number[0]] + ' hundred and ' + @numbers[number[2]] if number[1] == '0' 
     return @numbers[number[0]] + ' hundred and ' + self.tens(number[1] + number[2])
   end
 
@@ -70,6 +71,10 @@ class Convert_Number
   def self.is_teen? number
     return true if number.length == 2 and number[0] == '1'
     return false
+  end
+
+  def self.below_ten? number
+    number < 10
   end
 
 end

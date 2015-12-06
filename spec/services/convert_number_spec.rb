@@ -71,6 +71,10 @@ describe Convert_Number do
       expect(subject.convert 100).to eq 'one hundred'
     end
 
+    it'should convert the number 101 to the word "one hundred and one" ' do
+      expect(subject.convert 101).to eq 'one hundred and one'
+    end
+
     it 'should convert the number 110 to the words "one hundred and ten"' do
       expect(subject.convert 110).to eq 'one hundred and ten'
     end

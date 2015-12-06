@@ -48,7 +48,7 @@ feature 'numbers list' do
       expect(page).to have_content 'one hundred and one'
       expect(page).to have_content 'one hundred'
       expect(page).to have_content 'ninety nine'
-      expect(page).to have_content 'ninety eigth'
+      expect(page).to have_content 'ninety eight'
       expect(page).to have_content 'ninety seven'
     end
   end
