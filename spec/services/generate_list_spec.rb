@@ -18,12 +18,14 @@ describe Generate_List do
     expect(subject).to respond_to(:generate).with(1).argument
   end
 
-  it "should call the convert_number class method once if the number one is passed as an arguement " do
-    subject.generate 1
-  end
-
   it 'should generate a list of number in english' do
-    expect(subject.generate 5).to eq(['one','two','three','four','five'])
+    subject.generate 5
+    numbers = Number.all
+    names = []
+    numbers.each do |n|
+      names << n.name
+    end
+    expect(names).to eq ["one","two","three","four","five"]
   end
 
 end

@@ -4,7 +4,7 @@ class Generate_List
 
   def self.generate number
     number.times do |n|
-      Number.create(name: Convert_Number.convert(n))
+      Number.create(name: Convert_Number.convert(n+1))
     end
   end
 end
